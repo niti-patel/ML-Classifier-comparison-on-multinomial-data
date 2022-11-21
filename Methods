@@ -1,0 +1,37 @@
+METHODS
+
+Data Pre-processing
+Data pre-processing includes data preparation, compounded by integration, cleaning, normalization and transformation of data; and data reduction tasks, such as feature selection, instance selection, discretization, etc. The result expected after a reliable chaining of data pre-processing tasks is a final dataset, which can be considered correct and useful for further data mining algorithms.
+For this assignment we have used the following pre-processing techniques:
+Normalization:
+We cannot say for sure that measurement unit for a data is not affected during analysis. However, it necessary to express all attributes in the same measurement units which is where normalizing the data to give all attributes is a usual statistical learning method The measurement unit used can affect the data analysis. We have used the technique of Min-Max normalization it aims to scale all the numerical values v of a numerical attribute A to a specified range denoted by [new − min A, new – max A]. Thus, a transformed value is obtained by applying the following expression to v in order to obtain the new value v’ [1]:
+	
+where max A and min A are the original maximum and minimum attribute values respectively. 
+
+(PCA)Principal Component Analysis
+It’s a commonly known fact that it is critical to reduce the number of factors or features to a few important ones to arrive at the right decision. This process is called dimensionality reduction. In machine learning, the problem of high dimensionality is dealt in two ways [2]:
+Feature selection — is carefully selecting the important features by filtering out the irrelevant features
+Feature extraction — is creating new and more relevant features from the original features
+ 
+Principal Component Analysis (PCA) is one of the key techniques of feature extraction [2]. PCA basically assists you find an axis along the entire dataset reserving the maximum information. For this assignment we have used covariance matrix to deduce the eigen value and eigen vectors. The spread of the data is along the principal components is examined by exploiting these eigen vectors.
+ 
+Classifiers Applied
+For this project the following are 4 classifiers used these classifiers are selected since they are useful for classifying multinominal data. Here is a basic functionality of the algorithm explained in simple words
+(KNN)K-Nearest Neighbours Classifier:
+ The KNN classifier is a non-parametric method used for classification for a set of given N vectors. The algorithm basically identifies the k-nearest neighbours for the N-vectors, where in it identifies the class of the unknown feature vector.
+There are various distance calculation methods that can be used to evaluate the distance between any given data point and its n-nearest neighbours. For the purpose of the project we have computed the (D)Euclidean distance which is mathematically given as:
+
+where X and Y are data points.
+
+Naive Bayes Classifier
+Naïve Bayes classifies using Bayes’ Theorem of probability [3]. Bayes’ theorem calculates the posterior probability of an event (A) given some prior probability of event B represented by P(A/B) as follows:
+ P(A/B) = 𝑃(𝐵/𝐴) 𝑃(𝐴) 𝑃(𝐵)
+ where, 
+• A and B are events. • P(A) and P(B) are the probabilities of observing A and B independent of each other. • P(A/B) is the conditional probability, i.e., Probability of observing A, given B is true. • P(B/A) is the probability of observing B, given A is True. [3]
+The joint probability distribution for a binary class problem as described by the Naïve Bayes classifier is:
+P (X = x, Y = c) = P (Y = c) P ˙ (X = x | Y = c)
+
+(SVM)Support Vector Machine Classifier
+SVM is a supervised learning algorithm. It works on the concept of margin calculation. This algorithm plots each data item as a point in n-dimensional space (where n is the number of features, we have in our dataset). The value of each feature is the value of the corresponding coordinate. It classifies the data into different classes by finding a line (hyper plane) which separates the training datasets into classes. It works by maximizing the distances between the nearest data point (in both classes) and the hyper plane that we can call as margin [3].
+Random Forest Classifier
+The ensemble learning algorithm used for this project is Random Forest Classifier which can be used for both classification as well as regression models. This algorithm creates a set of decision trees by selecting a random subset of data using the approach of bagging [3]. The Random Forest Algorithm has two stages one is creating a random forest and the second one is to make predictions based on the classifier created in the first step
